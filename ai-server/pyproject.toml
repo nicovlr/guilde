@@ -1,0 +1,30 @@
+[project]
+name = "guilde-ai"
+version = "0.1.0"
+description = "Local AI server for GUILDE (FastAPI + OpenAI-compatible LLM)"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "httpx>=0.27",
+    "pydantic-settings>=2.4",
+]
+# Install guilde-data editable alongside this package (see Makefile setup).
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.6", "pytest-asyncio>=0.24"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+pythonpath = ["src"]
