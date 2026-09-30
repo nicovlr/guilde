@@ -1,0 +1,28 @@
+name: Bug
+description: Comportement incorrect reproductible
+labels: []
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Zone
+      options:
+        - area:client
+        - area:ai
+        - area:data
+        - area:infra
+        - area:docs
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduire
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Attendu vs observé
+    validations:
+      required: true

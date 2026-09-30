@@ -1,0 +1,29 @@
+name: Feature
+description: Demande de fonctionnalité ou tâche de développement
+labels: []
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Zone
+      options:
+        - area:client
+        - area:ai
+        - area:data
+        - area:infra
+        - area:docs
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: Objectif
+      description: Ce qui doit être livré
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Critères d'acceptation
+    validations:
+      required: true
